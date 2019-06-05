@@ -12,6 +12,7 @@ public class CheckContentType {
                 get("http://zippopotam.us/us/90210").
                 then().
                 assertThat().
-                contentType(ContentType.JSON);
+//                contentType(ContentType.JSON);
+                contentType("application/json");
     }
 }
