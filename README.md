@@ -1,4 +1,4 @@
-# Rest-API-Automation-with-Rest-Assured
+# Rest API Automation with Rest Assured
 
 
 ## What is REST Assured
@@ -12,16 +12,20 @@
 ## Configuration 
 
 Maven
+```markdown
 <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <version>RELEASE</version>
 </dependency>
+```
 
 Gradle
+```markdown
 testCompile 'io.rest-assured:rest-assured:3.3.0'
+```
 
-## API under test (http://zippopotam.us/)
+## API under test
 - http://api.zippopotam.us/
 - Supplies location data based on the country code and the zip code
 
@@ -31,11 +35,3 @@ testCompile 'io.rest-assured:rest-assured:3.3.0'
 - Supports Gherkin syntax (Given/When/Then)
 - Uses Hamcrest matchers for checks
 - Uses JsonPath/ GPath and XmlPath for selecting elements from response
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
