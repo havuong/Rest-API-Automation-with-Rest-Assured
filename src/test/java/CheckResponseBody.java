@@ -25,4 +25,27 @@ public class CheckResponseBody {
                 assertThat().
                 body("places[0].state", equalTo("California"));
     }
+
+    @Test
+    public void requestUsZipCode90210_checkListOfPlaceNamesInResponseBody_expectContainsBeverlyHills() {
+
+        given().
+                when().
+                get("http://zippopotam.us/us/90210").
+                then().
+                assertThat().
+                body("places.'place name'", hasItem("Beverly Hills"));
+    }
+
+    @Test
+    public void requestUsZipCode90210_checkNumberOfPlaceNamesInResponseBody_expectOne() {
+
+        given().
+                when().
+                get("http://zippopotam.us/us/90210").
+                then().
+                assertThat().
+                body("places.'place name'", hasSize(1));
+    }
+
 }
