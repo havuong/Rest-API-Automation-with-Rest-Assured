@@ -12,7 +12,7 @@ public class CheckResponseBody {
 
         RestAssured.baseURI = "http://zippopotam.us/us/90210";
     }
-    
+
     @Test
     public void requestUsZipCode90210_checkPlaceNameInResponseBody_expectBeverlyHills() {
 
