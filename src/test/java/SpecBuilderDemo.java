@@ -3,6 +3,7 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -53,5 +54,20 @@ public class SpecBuilderDemo {
                 and().
                 assertThat().
                 body("places[0].'place name'", equalTo("Beverly Hills"));
+    }
+
+    @Test
+    public void requestUsZipCode90210_extractPlaceNameFromResponseBody_assertEqualToBeverlyHills() {
+
+        String placeName =
+                given().
+                        spec(reqSpec).
+                        when().
+                        get("http://zippopotam.us/us/90210").
+                        then().
+                        extract().
+                        path("places[0].'place name'");
+
+        Assert.assertEquals(placeName, "Beverly Hills");
     }
 }
